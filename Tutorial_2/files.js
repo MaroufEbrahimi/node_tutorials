@@ -19,18 +19,34 @@ const fs = require("fs")
 //   console.log(data.toString());
 // })
 
-
 // #------ writing file -------#
 // fs.writeFile('./docs/blog2.txt', 'hi, marouf', () => {
 //   console.log('file was written!');
 // })
 
 // #------ directories -------#
-if (!fs.existsSync('./assets')) {
-  fs.mkdir("./assets", (err) => {
+// if (!fs.existsSync("./assets")) {
+//   fs.mkdir("./assets", (err) => {
+//     if (err) {
+//       console.log(err)
+//     }
+//     console.log("folder created")
+//   })
+// } else {
+//   fs.rmdir("./assets", (err) => {
+//     if (err) {
+//       console.log(err)
+//     }
+//     console.log("folder deleted")
+//   })
+// }
+
+// #------ deleting files -------#
+if (fs.existsSync("./docs/delete.txt")) {
+  fs.unlink("./docs/delete.txt", (err) => {
     if (err) {
       console.log(err)
     }
-    console.log("folder created")
+    console.log("file deleted")
   })
-}
+} 
