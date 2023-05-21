@@ -12,6 +12,11 @@ const Add = () => {
     setBook((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
+  const handleSubmit = (e) => {
+     e.preventDefault()
+     
+  }
+
   return (
     <div className="add">
       <h1>Add New Book</h1>
@@ -39,6 +44,7 @@ const Add = () => {
         name="cover"
         placeholder="cover"
       />
+      <button onClick={handleSubmit}>Add</button>
     </div>
   )
 }
